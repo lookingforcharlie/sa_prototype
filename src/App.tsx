@@ -53,6 +53,11 @@ function App() {
   console.log('first commit in branch_charlie')
   console.log('second commit in branch_charlie')
   console.log('third commit in branch_charlie')
+  console.log(
+    'fourth commit in branch_charlie, add some for amend, change commit message'
+  )
+
+  console.log('add some sauce for the fourth commit')
 
   const onSelect: TreeProps['onSelect'] = (selectedKeys, info) => {
     console.log('selected', selectedKeys, info)
