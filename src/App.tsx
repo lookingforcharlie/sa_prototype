@@ -1,54 +1,8 @@
-import { Tree } from 'antd'
-import type { DataNode, TreeProps } from 'antd/es/tree'
-import './App.css'
+import { Divider } from 'antd'
+import BasicTree from './components/BasicTree'
+import Bread from './components/Bread'
+import DraggableTree from './components/DraggableTree'
 
-import './App.css'
-
-const treeData: DataNode[] = [
-  {
-    title: 'parent 1',
-    key: '0-0',
-    children: [
-      {
-        title: 'parent 1-0',
-        key: '0-0-0',
-        disabled: false,
-        children: [
-          {
-            title: 'leaf',
-            key: '0-0-0-0',
-            disableCheckbox: true,
-          },
-          {
-            title: 'leaf',
-            key: '0-0-0-1',
-          },
-        ],
-      },
-      {
-        title: 'parent 1-1',
-        key: '0-0-1',
-        children: [
-          {
-            title: <span style={{ color: '#1677ff' }}>sss</span>,
-            key: '0-0-1-0',
-            children: [
-              {
-                title: 'stem',
-                key: '0-0-0-0-0',
-                disableCheckbox: true,
-              },
-            ],
-          },
-          {
-            title: <span style={{ color: '#1677ff' }}>ddd</span>,
-            key: '0-0-1-1',
-          },
-        ],
-      },
-    ],
-  },
-]
 function App() {
   console.log('first commit in branch_charlie')
   console.log('second commit in branch_charlie')
@@ -59,27 +13,27 @@ function App() {
 
   console.log('add some sauce for the fourth commit')
 
-  const onSelect: TreeProps['onSelect'] = (selectedKeys, info) => {
-    console.log('selected', selectedKeys, info)
-  }
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target)
 
-  const onCheck: TreeProps['onCheck'] = (checkedKeys, info) => {
-    console.log('onCheck', checkedKeys, info)
+    const target = e.target as HTMLInputElement & {
+      files: FileList
+    }
+    console.log(target.files[0].size)
   }
 
   return (
     <>
-      <Tree
-        checkable
-        defaultExpandedKeys={['0-0-0', '0-0-1']}
-        defaultSelectedKeys={['0-0-0', '0-0-1']}
-        defaultCheckedKeys={['0-0-0', '0-0-1']}
-        onSelect={onSelect}
-        onCheck={onCheck}
-        treeData={treeData}
-      />
-      <button>Delete</button>
-      <button>Modify</button>
+      <Bread />
+
+      <Divider />
+      <BasicTree />
+      <Divider />
+
+      <DraggableTree />
+
+      <Divider />
+      <input type='file' name='image' onChange={handleChange} />
     </>
   )
 }
