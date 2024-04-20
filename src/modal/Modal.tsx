@@ -1,6 +1,7 @@
 import { Divider } from 'antd'
 import React from 'react'
 import Bread from '../components/Bread'
+import SecondDraggableTree from '../components/CopyDraggableTree'
 import DraggableTree from '../components/DraggableTree'
 // import content from '../data/content'
 
@@ -19,7 +20,10 @@ export default function Modal(props: {
         <Bread />
       </div>
       <Divider />
-      <DraggableTree />
+      <div className='modal-tree'>
+        <DraggableTree />
+        <SecondDraggableTree />
+      </div>
     </div>
   )
 }

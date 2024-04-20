@@ -35,7 +35,7 @@ const generateData = (
 }
 generateData(z)
 
-export default function DraggableTree() {
+export default function SecondDraggableTree() {
   const [gData, setGData] = useState(defaultData)
   const [expandedKeys] = useState(['0-0', '0-0-0', '0-0-0-0'])
 

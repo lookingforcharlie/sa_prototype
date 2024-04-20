@@ -36,7 +36,17 @@ export default function Bread() {
           title: 'Ant Design',
         },
         {
-          title: <a href=''>Component</a>,
+          title: (
+            <button
+              style={{
+                border: 'none',
+                backgroundColor: 'transparent',
+                cursor: 'pointer',
+              }}
+            >
+              Component
+            </button>
+          ),
         },
         {
           title: <a href=''>General</a>,
