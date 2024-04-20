@@ -1,3 +1,43 @@
-. {
-  background-color: yellow;
+.modal {
+  position: fixed;
+  z-index: 1;
+  padding-top: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 80%;
+  height: 80%;
+  overflow: auto;
+  /* background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.2); */
+  background-color: white;
+}
+
+.modal-title {
+  border: 1px solid gold;
+  margin: auto;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 2rem;
+  border: solid 1px;
+  margin: 2rem;
+  lineheight: 1.5rem;
+}
+
+@media screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .modal {
+    height: 90%; /* Adjust height for smaller screens */
+  }
 }

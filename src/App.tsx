@@ -2,6 +2,7 @@ import { Divider } from 'antd'
 import BasicTree from './components/BasicTree'
 import Bread from './components/Bread'
 import DraggableTree from './components/DraggableTree'
+import EntryModal from './modal/EntryModal'
 
 function App() {
   console.log('first commit in branch_charlie')
@@ -25,7 +26,8 @@ function App() {
   return (
     <>
       <Bread />
-
+      <Divider />
+      <EntryModal />
       <Divider />
       <BasicTree />
       <Divider />
