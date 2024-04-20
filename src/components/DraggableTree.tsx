@@ -2,9 +2,11 @@ import type { TreeDataNode, TreeProps } from 'antd'
 import { Tree } from 'antd'
 import React, { useState } from 'react'
 
-// x stands for the number of first level
+// x stands for the number of items for each level
 const x = 3
+// y stands for how many first items will have sub-tree in each level
 const y = 2
+// z stands for level number, how deep the tree can be, how many sub-tree each tree will contain
 const z = 1
 const defaultData: TreeDataNode[] = []
 

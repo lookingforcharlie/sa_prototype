@@ -1,61 +1,43 @@
 // import { HomeOutlined,  UserOutlined } from '@ant-design/icons'
 import { Breadcrumb } from 'antd'
+import { useState } from 'react'
 
-const menuItems = [
-  {
-    key: '1',
-    label: (
-      <a target='_blank' rel='noopener noreferrer' href='https://meetxb.com'>
-        General
-      </a>
-    ),
-  },
-  {
-    key: '2',
-    label: (
-      <a target='_blank' rel='noopener noreferrer' href='https://meetxb.com'>
-        Layout
-      </a>
-    ),
-  },
-  {
-    key: '3',
-    label: (
-      <a target='_blank' rel='noopener noreferrer' href='https://meetxb.com'>
-        Navigation
-      </a>
-    ),
-  },
+interface BreadItem {
+  id: number
+  name: string
+}
+
+// Arguments have ArgumentShape and ArgumentDataType
+const breadItems: BreadItem[] = [
+  { id: 1, name: 'Assumption Types' },
+  { id: 2, name: 'Evaluators' },
+  { id: 3, name: 'Arguments' },
+  { id: 4, name: 'Qualifiers' },
 ]
 
 export default function Bread() {
+  const [selectedId, setSelectedId] = useState<number | null>(null)
   return (
     <Breadcrumb
-      items={[
-        {
-          title: 'Ant Design',
-        },
-        {
-          title: (
-            <button
-              style={{
-                border: 'none',
-                backgroundColor: 'transparent',
-                cursor: 'pointer',
-              }}
-            >
-              Component
-            </button>
-          ),
-        },
-        {
-          title: <a href=''>General</a>,
-          menu: { items: menuItems },
-        },
-        {
-          title: 'Button',
-        },
-      ]}
+      items={breadItems.map((item) => ({
+        title: (
+          <button
+            key={item.id}
+            style={{
+              border: 'none',
+              backgroundColor: 'transparent',
+              cursor: 'pointer',
+              color: selectedId === item.id ? 'black' : 'gray',
+            }}
+            // Toggle selectedId on click
+            onClick={() =>
+              setSelectedId(item.id === selectedId ? null : item.id)
+            }
+          >
+            {item.name}
+          </button>
+        ),
+      }))}
     />
   )
 }

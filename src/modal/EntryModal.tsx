@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import '../index.css'
 import Modal from './Modal'
 
 export default function EntryModal() {
