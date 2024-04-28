@@ -37,7 +37,7 @@ export default function BootStrapModal(props: {
       style={{ display: 'block', position: 'initial' }}
     >
       <Modal.Dialog className='modal'>
-        <div>
+        <div className='modal_content'>
           <Modal.Header closeButton>
             <Modal.Title>Modal title</Modal.Title>
           </Modal.Header>
