@@ -1,9 +1,6 @@
-import { Divider } from 'antd'
 import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
-import Bread from '../components/Bread'
-import DraggableTree from '../components/DraggableTree'
 
 export default function BootStrapModal(props: {
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>
