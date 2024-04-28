@@ -8,7 +8,6 @@ export default function BootStrapModal(props: {
 }) {
   const handleOnClickOnButton = () => {
     props.setShowModal((prev) => !prev)
-    console.log('i am bino ')
   }
 
   return (
