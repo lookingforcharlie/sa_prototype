@@ -6,15 +6,6 @@ import './index.css'
 import EntryModal from './modal/EntryModal'
 
 function App() {
-  // console.log('first commit in branch_charlie')
-  // console.log('second commit in branch_charlie')
-  // console.log('third commit in branch_charlie')
-  // console.log(
-  //   'fourth commit in branch_charlie, add some for amend, change commit message'
-  // )
-
-  // console.log('add some sauce for the fourth commit')
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target)
 
@@ -31,8 +22,8 @@ function App() {
       <Divider />
       <EntryModal />
       <Divider />
-      <BasicTree />
-      <Divider />
+      {/* <BasicTree />
+      <Divider /> */}
 
       <DraggableTree />
 
