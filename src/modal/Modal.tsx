@@ -11,24 +11,6 @@ export default function BootStrapModal(props: {
   }
 
   return (
-    // <div className='overlay'>
-    //   <div className='modal'>
-    //     <h1 className='modal-title'>I am the modal</h1>
-    //     <button onClick={handleOnClickOnButton}>Dismiss me</button>
-    //     <Divider />
-
-    //     <div style={{ margin: '2rem' }}>
-    //       <Bread />
-    //     </div>
-    //     <Divider />
-
-    //     <div className='modal-tree'>
-    //       <DraggableTree />
-    //       <DraggableTree />
-    //       <DraggableTree />
-    //     </div>
-    //   </div>
-    // </div>
     <div
       className='modal show'
       style={{ display: 'block', position: 'initial' }}
